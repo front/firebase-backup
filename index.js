@@ -1,12 +1,10 @@
 const https = require('https');
 const fs = require('fs');
 const moment = require('moment');
-
-const firebaseUrl = 'https://push-notification-20514.firebaseio.com';
-const firebaseSecret = 'wYejrY8PMOZuX0Looq3AS66oOCCtYEdvscoiNQC5';
+const fireConf = require('./config.js');
 
 getData = function() {
-	const url = firebaseUrl+'/.json?format=export&auth='+firebaseSecret;
+	const url = fireConf.firebaseUrl+'/.json?format=export&auth=' + fireConf.firebaseSecret;
 	const scoreReq = https.get(url, response => {
 		let completeResponse = '';
 		response.on('data', chunk => {
