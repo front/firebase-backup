@@ -12,7 +12,8 @@ cd firebase-backup
 ```
 
 Set `firebaseUrl` and `firebaseSecret` in `config.js`.
-You can find firebaseUrl in [console.firebase.google.com](https://console.firebase.google.com/) under projects/your-project/database and firebaseSecret under Project-settings/service-account/Database-secret
+You can find firebaseUrl in [console.firebase.google.com](https://console.firebase.google.com/) under projects/your-project/database and firebaseSecret under Project-settings/service-account/Database-secret.
+Also You can edit `scriptInterval`, by default it runs every 6 hours.
 
 Then run: 
 ```sh
