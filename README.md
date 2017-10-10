@@ -2,7 +2,7 @@
 
 Backup Firebase database and store it in .json file with date and time prefix.",
 
-## Running Locally
+## Running Script
 
 Make sure you have [Node.js](http://nodejs.org/) installed.
 
@@ -12,6 +12,9 @@ cd firebase-backup
 ```
 
 Set `firebaseUrl` and `firebaseSecret` in `config.js`.
+You can find firebaseUrl in [console.firebase.google.com](https://console.firebase.google.com/) under projects/your-project/database and firebaseSecret under Project-settings/service-account/Database-secret
+
+Then run: 
 ```sh
 npm install
 npm start

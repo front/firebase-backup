@@ -1,10 +1,10 @@
 const https = require('https');
 const fs = require('fs');
 const moment = require('moment');
-const fireConf = require('./config.js');
+const config = require('./config.js');
 
-getData = function() {
-	const url = fireConf.firebaseUrl+'/.json?format=export&auth=' + fireConf.firebaseSecret;
+getData = () => {
+	const url = config.firebaseUrl+'/.json?format=export&auth=' + config.firebaseSecret;
 	const scoreReq = https.get(url, response => {
 		let completeResponse = '';
 		response.on('data', chunk => {
@@ -14,11 +14,11 @@ getData = function() {
 			backup(completeResponse);
 		})
 	}).on('error', e => {
-		console.log('ERROR ', new Date(), ' problem with request: ', e.message);
+		console.log('Error: ', moment().format('YYYY-M-D H.m.s').toString(), ' Request rejected: ', e.message);
 	});
 }
 
-backup = function(data) {
+backup = data => {
 	let filename = __dirname + '/backups/' + moment().format('YYYY-M-D H.m.s').toString() + '.json';
 	fs.writeFile(filename, data, err => {
 		if(err) {
@@ -29,9 +29,9 @@ backup = function(data) {
 	});
 }
 
-init = function() {
+init = () => {
 	getData();
-	setInterval(getData, 21600000);
+	setInterval(getData, config.scriptInterval);
 }
 
 init();
