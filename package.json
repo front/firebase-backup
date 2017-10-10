@@ -1,0 +1,20 @@
+{
+  "name": "firebase-backup",
+  "version": "1.0.0",
+  "description": "Backup Firebase database and store it in .json file with date and time prefix.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "Firebase",
+    "Backup",
+    "Firebase-export"
+  ],
+  "author": "Foad Yousefi",
+  "license": "MIT",
+  "dependencies": {
+    "firebase": "^4.5.0",
+    "moment": "^2.18.1"
+  }
+}
