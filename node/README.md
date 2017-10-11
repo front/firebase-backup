@@ -1,6 +1,4 @@
-# Firebase Backup
-
-Backup Firebase database and store it in .json file with date and time prefix.",
+# Using node.js
 
 ## Running Script
 
