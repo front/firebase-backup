@@ -19,7 +19,7 @@ getData = () => {
 }
 
 backup = data => {
-	let filename = __dirname + '/backups/' + moment().format('YYYY-M-D H.m.s').toString() + '.json';
+	let filename = __dirname + '/../backups/' + moment().format('YYYY-M-D H.m.s').toString() + '.json';
 	fs.writeFile(filename, data, err => {
 		if(err) {
 			console.log(err);
