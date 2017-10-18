@@ -41,7 +41,7 @@ init = () => {
 init();
 
 var folderId = config.folderId;
-function sendFileToDrive(filename, backupFile) {
+function sendFileToDrive(backupFile) {
 	fs.readFile('client_secret.json', function processClientSecrets(err, content) {
 		if (err) {
 			console.log('Error loading client secret file: ' + err);
